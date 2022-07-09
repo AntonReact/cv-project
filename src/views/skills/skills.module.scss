@@ -1,0 +1,36 @@
+@import "src/styles/variables.scss";
+@import "src/styles/animations.scss";
+
+
+.skills {
+  padding: spacing("l");
+  padding-bottom: 100px;
+  color: color("white");
+  height: 100vh;
+  overflow: hidden;
+
+  h2 {
+    @include slide-right(2s);
+    color: color("white");
+    text-align: center;
+  }
+
+  .codeContainer {
+    display: flex;
+    justify-content: center;
+    gap: spacing("l");
+    margin-top: spacing("m");
+    flex-wrap: wrap;
+    min-height: 75vh;
+
+    &>div:first-child {
+      @include slide-bottom(3s);
+      align-self: flex-start;
+    }
+
+    &>div:last-child {
+      @include slide-bottom(3.5s);
+      align-self: flex-end;
+    }
+  }
+}

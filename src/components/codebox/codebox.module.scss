@@ -1,0 +1,67 @@
+@import "src/styles/variables.scss";
+
+.codebox {
+  background-color: color("white");
+  position: relative;
+  margin: spacing("s");
+  width: 650px;
+  height: fit-content;
+  border-radius: 12px;
+  overflow: hidden;
+
+  .title {
+    padding: spacing("s");
+    border-bottom: 1px solid brown;
+    color: brown;
+  }
+
+  .copyButton {
+    position: absolute;
+    top: spacing("xs");
+    right: spacing("xs");
+    opacity: 0;
+    pointer-events: none;
+    min-height: 30px;
+    font-size: 10px;
+    background-color: color("white");
+    color: color("black");
+    box-shadow: 0px 0px 5px -1px grey;
+
+    &:hover {
+      background-color: color("lightgrey");
+    }
+
+    &:active {
+      background-color: color("grey");
+    }
+  }
+
+  strong {
+    color: color("black");
+  }
+
+  ol {
+    color: saddlebrown;
+    padding: 0;
+    margin: 0;
+    padding-left: 22px;
+
+    li {
+      border-bottom: 1px solid burlywood;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: spacing("xs");
+
+      &::marker {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &:hover {
+    .copyButton {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

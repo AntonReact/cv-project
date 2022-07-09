@@ -1,0 +1,85 @@
+@import "src/styles/variables.scss";
+
+.projectPopup {
+  position: absolute;
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px 0px color("black");
+  border-radius: 8px;
+  background-color: color("white");
+  margin: 10px;
+  opacity: 0;
+  transition: .3s;
+  pointer-events: none;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .imageContainer {
+    height: calc(100px + spacing('m') + spacing('m'));
+    padding: spacing('m');
+    background-color: color("white");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    .emptyImage {
+      width: 100%;
+      height: 100%;
+      background-color: color("white");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      font-weight: bold;
+      color: color("black");
+    }
+  }
+
+  .body {
+    border-top: 1px solid color("black");
+    height: 200px;
+    overflow: scroll;
+    padding: spacing("s");
+
+    a {
+      text-decoration: none;
+
+      &::after {
+        content: "\2197";
+        font-size: 18px;
+        margin-left: spacing("xs");
+      }
+
+      &:hover {
+        color: color("primary");
+      }
+    }
+
+    .title {
+      display: block;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      margin-top: calc(-1 * spacing("xs"));
+      color: color("darkgrey");
+      text-transform: capitalize;
+    }
+
+    .description {
+      margin-top: spacing("xs");
+      color: color("black");
+      font-size: 13px;
+    }
+  }
+}

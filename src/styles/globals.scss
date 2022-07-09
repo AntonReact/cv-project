@@ -1,0 +1,64 @@
+@import "./variables.scss";
+
+body {
+  --primary-color: rgb(0, 112, 243);
+  --primary-light-color: rgb(0, 81, 255);
+  --primary-dark-color: rgb(0, 81, 215);
+
+  --secondary-color: rgb(20, 179, 164);
+  --secondary-light-color: rgb(20, 179, 164);
+  --secondary-dark-color: rgb(20, 179, 164);
+
+  --green-color: rgb(0, 200, 70);
+  --green-light-color: rgb(190, 255, 191);
+  --green-dark-color: rgb(0, 150, 70);
+
+  --black-color: rgb(25, 27, 34);
+  --darkgrey-color: rgb(112, 112, 112);
+  --grey-color: rgb(209, 209, 210);
+  --lightgrey-color: rgb(240, 240, 240);
+  --white-color: rgb(255, 255, 255);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat;
+  color: color("black");
+}
+
+html,
+body,
+#__next {
+  height: 100%
+}
+
+main {
+  min-height: 100%;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.project-point {
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+    stroke-width: 4;
+    r: 4;
+  }
+
+  &:active {
+    stroke-width: 4.2;
+    r: 4.2;
+  }
+}

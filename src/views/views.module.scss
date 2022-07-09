@@ -1,0 +1,29 @@
+@import "src/styles/variables.scss";
+@import "src/styles/animations.scss";
+
+.steps {
+  transition: .8s ease-in;
+
+  h2 {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+  }
+
+  .step {
+    @include appear(0, 2s);
+
+    &.disappear {
+      @include disappear();
+    }
+  }
+
+  // TStepTheme
+  &.white {
+    background-color: color("white");
+  }
+
+  &.black {
+    background-color: color("black");
+  }
+}

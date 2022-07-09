@@ -1,0 +1,45 @@
+@import "src/styles/variables.scss";
+
+.button {
+  font-family: Montserrat;
+  cursor: pointer;
+  min-height: 40px;
+  min-width: 100px;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: .2s;
+  box-shadow: 0px 2px 5px -2px grey;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.primary {
+    color: color("white");
+    background-color: color("primary");
+
+    &:hover {
+      background-color: color("primary-light");
+    }
+
+    &:active {
+      background-color: color("primary-dark");
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.light {
+    background-color: color("lightgrey");
+    color: color("black");
+
+    &:hover,
+    &:active {
+      background-color: color("grey");
+    }
+  }
+}

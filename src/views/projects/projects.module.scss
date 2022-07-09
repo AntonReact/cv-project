@@ -1,0 +1,70 @@
+@import "src/styles/variables.scss";
+@import "src/styles/animations.scss";
+
+@keyframes circle-slide {
+  0% {
+    cy: -50;
+  }
+
+  100% {
+    cy: 200;
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: scroll;
+  padding: spacing("l") 0;
+
+  h2 {
+    color: color("white");
+    text-align: center;
+  }
+
+  .mapContainer {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 0 spacing("l");
+    height: 100%;
+  }
+
+  svg {
+    width: 95%;
+    min-width: 1500px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: spacing("xl");
+
+    path {
+      fill: color("white");
+
+      @for $i from 1 through 250 {
+        &:nth-child(#{$i}) {
+          @include appear(#{$i * 0.02 + 1}s);
+        }
+      }
+
+      transition: .3s;
+      cursor: pointer;
+
+      &::before {
+        content: attr(id);
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      &:hover {
+        fill: color("grey");
+      }
+    }
+
+    circle {
+      @include appear(5s);
+    }
+  }
+}

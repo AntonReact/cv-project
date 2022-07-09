@@ -1,0 +1,14 @@
+@import 'src/styles/variables.scss';
+
+.cvSection {
+  .title {
+    margin: 0;
+  }
+  h2.title {
+    font-size: 16px;
+    margin-top: spacing("m");
+  }
+  .body {
+    margin: spacing("s") 0;
+  }
+}

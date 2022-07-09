@@ -1,0 +1,16 @@
+@import "src/styles/variables.scss";
+
+.download_cv_button {
+  position: absolute;
+  bottom: spacing("m");
+  right: spacing("m");
+  line-height: 18px;
+  padding-right: spacing("m");
+
+  &::before {
+    content: '\2913';
+    font-size: 18px;
+    margin-right: spacing("s");
+    margin-left: spacing("xs");
+  }
+}

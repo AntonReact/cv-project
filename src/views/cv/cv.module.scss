@@ -1,0 +1,171 @@
+@import "src/styles/variables.scss";
+@import "src/styles/animations.scss";
+
+$WIDTH: 789px;
+
+.cv {
+  @include appear(0.5s);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  overflow: scroll;
+  padding: spacing("xl");
+  opacity: 0;
+
+  .buttonContainer {
+    position: absolute;
+    display: flex;
+    gap: spacing("s");
+    top: spacing("m");
+    right: spacing("m");
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+
+    .printButton,
+    .downloadButton {
+      min-width: 50px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+
+  .document {
+    position: relative;
+    height: 1020px;
+    min-width: $WIDTH;
+    display: flex;
+    border-radius: 16px;
+    box-shadow: 0px 0px 9px -2px grey;
+    overflow: hidden;
+    font-size: 12px;
+    background-color: color("white");
+
+    &:hover {
+      .buttonContainer {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  .sidebar {
+    overflow: hidden;
+    width: calc($WIDTH * 0.32);
+    height: 100%;
+    background-color: color("green-light");
+    padding: spacing("xl");
+
+    h1,
+    h2 {
+      position: relative;
+      text-align: center;
+      margin: 0;
+    }
+
+    h1 {
+      @include slide-right(1s);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    h2 {
+      @include slide-left(1s);
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+    }
+
+    h3 {
+      position: relative;
+      @include slide-left(1.5s);
+    }
+
+    i {
+      font-size: 11px;
+    }
+
+    hr {
+      width: 30px;
+      border: none;
+      border-top: 1px solid color("darkgrey");
+      margin: spacing("m") auto;
+    }
+
+    section {
+      margin-top: spacing("l");
+    }
+
+    .details,
+    .links,
+    .skills,
+    .languages {
+      display: flex;
+      flex-direction: column;
+      gap: spacing("s");
+    }
+
+    .country {
+      @include slide-left(1.9s);
+    }
+
+    @for $i from 1 through 10 {
+      a:nth-child(#{$i}) {
+        @include slide-left();
+        animation-delay: #{$i * 0.1 + 2}s;
+      }
+
+      .skills .item:nth-child(#{$i}) {
+        @include slide-left();
+        animation-delay: #{$i * 0.1 + 3}s;
+      }
+
+      .languages .item:nth-child(#{$i}) {
+        @include slide-left();
+        animation-delay: #{$i * 0.1 + 4}s;
+      }
+    }
+  }
+
+  .content {
+    @include slide-top(5s);
+    width: calc($WIDTH * 0.68);
+    height: 100%;
+    padding: spacing("xl");
+    position: relative;
+
+    h2 {
+      font-size: 18px;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media print {
+  button {
+    display: none;
+  }
+
+  .cv .document {
+    height: 1150px;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    transform: scale(1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

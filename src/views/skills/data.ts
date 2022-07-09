@@ -1,0 +1,42 @@
+import { ICodeboxTech } from 'src/components/codebox/types';
+
+export const frontend: Array<ICodeboxTech> = [
+  { label: 'HTML/CSS', li: true, strong: true },
+  { label: 'JavaScript', li: true, strong: true },
+  { label: 'TypeScript', li: true, strong: true },
+  { label: 'React.js', li: true, strong: true },
+  { label: 'Redux', li: true, strong: true },
+  { label: 'Jest', li: true, strong: true },
+  { label: 'Gatsby', li: true, strong: true },
+  { label: 'Next.js', li: true, strong: true },
+  { label: 'SCSS', li: true, strong: true },
+  { label: 'Redux-Thunk', comment: true },
+  { label: 'Redux-Saga', comment: true },
+  { label: 'Material UI', comment: true },
+  { label: 'Webpack', comment: true },
+  { label: 'Babel', comment: true },
+  { label: 'Bootstrap', comment: true },
+  { label: 'Sanity.io', comment: true },
+  { label: 'Styled-Components', comment: true },
+  { label: 'Formik', comment: true },
+  { label: 'Figma', comment: true },
+  { label: 'Ant.Design', comment: true },
+];
+
+export const backend: Array<ICodeboxTech> = [
+  { label: 'Node.js', strong: true },
+  { label: 'Express.js', strong: true },
+  { label: 'Nest.js', strong: true },
+  { label: 'MongoDB', strong: true },
+  { label: 'SQL', strong: true },
+  { label: 'Docker', strong: true },
+  { label: '*ORM', strong: true },
+  { label: 'AWS', strong: true },
+  { label: 'Google Cloud', strong: true },
+  { label: 'Loopback.io', strong: true },
+  { label: 'Swagger', comment: true },
+  { label: 'Firebase', comment: true },
+  { label: 'Netlify', comment: true },
+  { label: 'Mongoose', comment: true },
+  { label: 'Heroku', comment: true },
+];

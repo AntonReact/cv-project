@@ -1,0 +1,10 @@
+@import "src/styles/variables.scss";
+
+.pageButtons {
+  position: fixed;
+  bottom: spacing("m");
+  left: spacing("m");
+  right: spacing("m");
+  display: flex;
+  justify-content: space-between;
+}
