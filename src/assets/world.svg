@@ -9058,18 +9058,18 @@
              265.47,189.73 266.30,189.47 266.02,188.96
              265.61,188.24 264.76,187.77 264.47,187.00 Z" />
 
-             <circle class="project-point villaway" cx="132" cy="118" r="3" stroke-width="3" stroke="rgb(0, 112, 243)" fill="white">
+             <circle class="project-point villaway" cx="132" cy="118">
             </circle>
-            <circle class="project-point smartarea" cx="484" cy="91" r="3" stroke-width="3" stroke="rgb(0, 112, 243)" fill="white">
+            <circle class="project-point smartarea" cx="484" cy="91">
             </circle>
-            <circle class="project-point pay_it" cx="432" cy="73" r="3" stroke-width="3" stroke="rgb(0, 112, 243)" fill="white">
+            <circle class="project-point pay_it" cx="432" cy="73">
            </circle>
-            <circle class="project-point ltg_group" cx="398" cy="85" r="3" stroke-width="3" stroke="rgb(0, 112, 243)" fill="white">
+            <circle class="project-point ltg_group" cx="398" cy="85">
             </circle>
-            <circle class="project-point quartznetwork" cx="140" cy="123" r="3" stroke-width="3" stroke="rgb(0, 112, 243)" fill="white">
+            <circle class="project-point quartznetwork" cx="140" cy="123">
             </circle>
-            <circle class="project-point frontegg" cx="480" cy="125" r="3" stroke-width="3" stroke="rgb(0, 112, 243)" fill="white">
+            <circle class="project-point frontegg" cx="480" cy="125">
             </circle>
-            <circle class="project-point wallter" cx="478" cy="133" r="3" stroke-width="3" stroke="rgb(0, 112, 243)" fill="white">
+            <circle class="project-point wallter" cx="478" cy="133">
             </circle>
 </svg>

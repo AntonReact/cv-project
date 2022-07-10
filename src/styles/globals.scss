@@ -51,14 +51,18 @@ a {
 .project-point {
   cursor: pointer;
   transition: .2s;
+  fill: color("white");
+  stroke: color("black");
+  stroke-width: 1;
+  r: 3.5;
 
   &:hover {
-    stroke-width: 4;
-    r: 4;
+    stroke-width: 2;
+    r: 6;
   }
 
   &:active {
-    stroke-width: 4.2;
-    r: 4.2;
+    stroke-width: 6;
+    r: 4;
   }
 }

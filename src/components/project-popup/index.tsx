@@ -15,6 +15,10 @@ interface IProjectPopupProps {
   onClose: () => void;
 }
 
+const CONTAINER_ID = 'projects';
+const POPUP_WIDTH = 250;
+const POPUP_HEIGHT = 300;
+
 function ProjectPopup(props: IProjectPopupProps) {
   const { project, onClose, open } = props;
   const {
@@ -24,17 +28,21 @@ function ProjectPopup(props: IProjectPopupProps) {
   const [isMounted, setMounted] = useState(false);
   const [coords, setCoords] = useState<{ top: number, left: number} | null>(null);
 
+  /**
+   * Sets popup position
+  */
   const setCoordinates = useCallback(() => {
     const projectPoint = document.querySelector(`.${key}`);
     if (!projectPoint || !popupRef.current) return;
-    const popup = popupRef.current as HTMLElement;
     const pointRect = projectPoint.getBoundingClientRect();
-    const { width: popupWidth, height: popupHeight } = popup.getBoundingClientRect();
-    const top = (pointRect.top + popupHeight) > window.innerHeight ? pointRect.top - popupHeight : pointRect.top;
-    const left = pointRect.left > (window.innerWidth - popupWidth) ? pointRect.left - popupWidth : pointRect.left;
+    const top = (pointRect.top + POPUP_HEIGHT) > window.innerHeight ? pointRect.top - POPUP_HEIGHT : pointRect.top - 12;
+    const left = pointRect.left > (window.innerWidth - POPUP_WIDTH) ? pointRect.left - POPUP_WIDTH + 6 : pointRect.left - 12;
     setCoords({ top, left });
-  }, [key]);
+  }, [key, open]);
 
+  /**
+   * Closes the popup on click outside the popup
+   */
   const watchClickOutside = useCallback((ev: Event) => {
     if (!popupRef.current || !ev.target) return;
     const target = ev.target as HTMLElement;
@@ -43,12 +51,18 @@ function ProjectPopup(props: IProjectPopupProps) {
     if (!popup.contains(target) && !isProjectPoint) onClose();
   }, [onClose]);
 
+  /**
+   * Initial coordinates set
+   */
   useEffect(() => {
     setCoordinates();
   }, [setCoordinates]);
 
+  /**
+   * Rests coordinates on scroll or resize
+   */
   useEffect(() => {
-    const mapContainer = document.getElementById('map-container');
+    const mapContainer = document.getElementById(CONTAINER_ID);
     window.addEventListener('resize', setCoordinates);
     mapContainer?.addEventListener('scroll', setCoordinates);
     return () => {
@@ -57,8 +71,11 @@ function ProjectPopup(props: IProjectPopupProps) {
     };
   }, [setCoordinates]);
 
+  /**
+   * Closes the popup on scroll
+   */
   useEffect(() => {
-    const mapContainer = document.getElementById('map-container');
+    const mapContainer = document.getElementById(CONTAINER_ID);
     if (!mapContainer) return undefined;
     mapContainer.addEventListener('scroll', onClose);
     return () => {
@@ -66,6 +83,9 @@ function ProjectPopup(props: IProjectPopupProps) {
     };
   }, [onClose]);
 
+  /**
+   * Closes the popup on click outside the popup
+   */
   useEffect(() => {
     if (isMounted && open) {
       document.addEventListener('click', watchClickOutside);
@@ -80,7 +100,7 @@ function ProjectPopup(props: IProjectPopupProps) {
   return (
     <div ref={popupRef} className={clsx(styles.projectPopup, open && styles.open)} style={coords || {}}>
       <div className={styles.imageContainer}>
-        {img ? <img src={img} alt={label} width={230} {...imgProps} /> : <div className={styles.emptyImage}>?</div>}
+        {img ? <img src={img} alt={label} width={230} {...imgProps} /> : <div className={styles.emptyImage}>{label}</div>}
       </div>
       <div className={styles.body}>
         {url

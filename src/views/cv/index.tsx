@@ -124,8 +124,8 @@ function CV(props: ICVProps) {
             </CVSection>
           </div>
           <div className={styles.buttonContainer}>
-            <Button onClick={handleDownload} className={styles.downloadButton}>&#10515;</Button>
-            <Button onClick={handlePrint} className={styles.printButton}>&#128424;</Button>
+            <Button variant="light" onClick={handleDownload} className={styles.downloadButton}>⬇️</Button>
+            <Button variant="light" onClick={handlePrint} className={styles.printButton}>🖨️</Button>
           </div>
         </div>
         <PageButtons prev={{ onClick: onPrevStep }} />

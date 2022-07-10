@@ -40,8 +40,10 @@ function Codebox(props: ICodeboxProps) {
 
   return (
     <div className={clsx(styles.codebox, className)}>
-      <div className={styles.title}>{type}</div>
-      <Button className={styles.copyButton} onClick={handleClick}>copy to clipboard</Button>
+      <div className={styles.title}>
+        {type}
+        <Button className={styles.copyButton} onClick={handleClick}>copy to clipboard</Button>
+      </div>
       {renderList()}
     </div>
   );

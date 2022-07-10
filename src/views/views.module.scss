@@ -4,26 +4,48 @@
 .steps {
   transition: .8s ease-in;
 
-  h2 {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 4rem;
-  }
-
   .step {
     @include appear(0, 2s);
 
     &.disappear {
       @include disappear();
     }
+
+    &>h2 {
+      display: block;
+      margin: 0;
+      line-height: 1.15;
+      font-size: 4rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: spacing("m") 0;
+      z-index: 1;
+    }
   }
 
   // TStepTheme
   &.white {
     background-color: color("white");
+
+    .step {
+      &>h2 {
+        color: color("black");
+        background-color: color("white");
+      }
+    }
   }
 
   &.black {
     background-color: color("black");
+
+    .step {
+      &>h2 {
+        color: color("white");
+        background-color: color("black");
+      }
+    }
   }
 }

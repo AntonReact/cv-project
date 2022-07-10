@@ -15,30 +15,27 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100vw;
   overflow: scroll;
-  padding: spacing("l") 0;
+  padding-bottom: spacing("l");
 
   h2 {
-    color: color("white");
-    text-align: center;
+    position: sticky;
+    left: 0;
+    right: 0;
   }
 
-  .mapContainer {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    padding: 0 spacing("l");
-    height: 100%;
-  }
-
-  svg {
-    width: 95%;
+  .map {
+    width: 95vw;
     min-width: 1500px;
-    height: auto;
+    min-height: 700px;
     margin: 0 auto;
     margin-top: spacing("xl");
+    user-select: none;
 
     path {
-      fill: color("white");
+      fill: color("primary");
+      transition: .3s;
 
       @for $i from 1 through 250 {
         &:nth-child(#{$i}) {
@@ -46,7 +43,6 @@
         }
       }
 
-      transition: .3s;
       cursor: pointer;
 
       &::before {
@@ -59,7 +55,7 @@
       }
 
       &:hover {
-        fill: color("grey");
+        fill: color("primary-dark");
       }
     }
 

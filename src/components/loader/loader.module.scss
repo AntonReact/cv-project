@@ -1,0 +1,41 @@
+@import "src/styles/variables.scss";
+
+@keyframes move {
+  0% {
+    left: -25%;
+  }
+
+  50% {
+    left: 100%;
+  }
+
+  0% {
+    left: -25%;
+  }
+}
+
+.loader {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: color("grey");
+  transition: .3s;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+  }
+
+  span {
+    display: block;
+    height: 100%;
+    width: 30%;
+    background-color: color("primary");
+    position: absolute;
+    left: -25%;
+    animation: move 3s infinite ease-in-out;
+  }
+}

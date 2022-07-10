@@ -3,34 +3,30 @@
 
 
 .skills {
-  padding: spacing("l");
-  padding-bottom: 100px;
+  padding-bottom: spacing("l");
   color: color("white");
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
 
   h2 {
     @include slide-right(2s);
-    color: color("white");
-    text-align: center;
   }
 
   .codeContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: spacing("l");
-    margin-top: spacing("m");
+    padding: 0 spacing("l");
     flex-wrap: wrap;
-    min-height: 75vh;
+    min-height: 80vh;
 
     &>div:first-child {
       @include slide-bottom(3s);
-      align-self: flex-start;
     }
 
     &>div:last-child {
       @include slide-bottom(3.5s);
-      align-self: flex-end;
     }
   }
 }

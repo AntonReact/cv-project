@@ -8,14 +8,13 @@ export interface IStepProps {
 }
 
 export interface IStepContext {
-  onStepChange: (step: number) => void;
   onNextStep: () => void;
   onPrevStep: () => void;
-  step: number;
   theme: TStepTheme;
 }
 
 export interface IStep {
   theme: TStepTheme;
+  path: string;
   Component: (props: IStepProps) => JSX.Element;
 }

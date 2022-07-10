@@ -4,10 +4,8 @@ import { createContext } from 'react';
 import { IStepContext } from './types';
 
 const defaultValues: IStepContext = {
-  onStepChange: () => {},
   onNextStep: () => {},
   onPrevStep: () => {},
-  step: 0,
   theme: 'white',
 };
 

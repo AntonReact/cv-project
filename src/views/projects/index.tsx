@@ -6,6 +6,7 @@ import React, {
 import { IProject } from 'src/types/global';
 // components
 import PageButtons from 'src/components/page-buttons';
+import Loader from 'src/components/loader';
 import ProjectPopup from 'src/components/project-popup';
 // utils
 import clsx from 'src/utils/clsx';
@@ -17,6 +18,8 @@ import { IStepProps } from 'src/views/types';
 import { ReactComponent as WorldMap } from 'src/assets/world.svg';
 // styles
 import styles from './projects.module.scss';
+
+const LOADING_TIMEOUT = 5000;
 
 function Projects(props: IStepProps) {
   const { className } = props;
@@ -65,16 +68,17 @@ function Projects(props: IStepProps) {
   };
 
   return (
-    <div className={clsx(styles.projects, className)}>
-      <h2>
-        Projects
-      </h2>
-      <div className={styles.mapContainer} id="map-container">
-        <WorldMap />
+    <>
+      <Loader timeout={LOADING_TIMEOUT} />
+      <div className={clsx(styles.projects, className)} id="projects">
+        <h2>
+          Projects
+        </h2>
+        <WorldMap className={styles.map} />
+        {Object.values(projects).map(renderProject)}
+        <PageButtons prev={{ onClick: onPrevStep }} next={{ onClick: onNextStep, label: 'CV' }} />
       </div>
-      {Object.values(projects).map(renderProject)}
-      <PageButtons prev={{ onClick: onPrevStep }} next={{ onClick: onNextStep, label: 'CV' }} />
-    </div>
+    </>
   );
 }
 
