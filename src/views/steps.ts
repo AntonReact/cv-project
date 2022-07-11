@@ -14,7 +14,7 @@ const steps: Array<IStep> = [
   },
   {
     Component: Skills,
-    theme: 'black',
+    theme: 'white',
     path: '/skills',
   },
   {

@@ -50,7 +50,7 @@
   .body {
     border-top: 1px solid color("black");
     height: 200px;
-    overflow: scroll;
+    overflow: hidden;
     padding: spacing("s");
 
     a {

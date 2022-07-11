@@ -2,11 +2,11 @@
 import { useContext } from 'react';
 // components
 import PageButtons from 'src/components/page-buttons';
-import Codebox from 'src/components/codebox';
+import Editor from 'src/components/editor';
 import StepContext from 'src/views/context';
 // utils
 import clsx from 'src/utils/clsx';
-import { backend, frontend } from './data';
+import editorFiles from './data';
 // types
 import { IStepProps } from '../types';
 // styles
@@ -21,10 +21,7 @@ function Skills(props: IStepProps) {
       <h2>
         Skills
       </h2>
-      <div className={styles.codeContainer}>
-        <Codebox list={frontend} type="Front-End" />
-        <Codebox list={backend} type="Back-End" />
-      </div>
+      <Editor files={editorFiles} className={styles.codeContainer} />
       <PageButtons prev={{ onClick: onPrevStep }} next={{ onClick: onNextStep, label: 'projects' }} />
     </div>
   );
