@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+
+@include breakpoint(sm down) {
+  h2 {
+    font-size: 32px;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+}

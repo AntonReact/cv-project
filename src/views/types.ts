@@ -10,6 +10,7 @@ export interface IStepProps {
 export interface IStepContext {
   onNextStep: () => void;
   onPrevStep: () => void;
+  onStepChange: (step: number) => void;
   theme: TStepTheme;
 }
 

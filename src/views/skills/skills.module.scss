@@ -26,3 +26,17 @@
     }
   }
 }
+
+@include breakpoint(sm down) {
+  .skills {
+    .codeContainer {
+      padding: 0;
+      gap: spacing("xs");
+
+      &>div {
+        margin: 0;
+      }
+      padding-bottom: spacing("xl");
+    }
+  }
+}

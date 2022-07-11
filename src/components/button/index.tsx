@@ -14,7 +14,7 @@ function Button(props: IButtonProps) {
   const {
     fullWidth, className, children, variant, ...rest
   } = props;
-  const classNames = clsx(styles.button, styles[variant], className, { fullWidth });
+  const classNames = clsx(styles.button, styles[variant || 'primary'], className, { fullWidth });
 
   return (
     <button

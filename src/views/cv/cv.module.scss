@@ -7,8 +7,6 @@ $WIDTH: 789px;
   @include appear(0.5s);
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
   position: relative;
   overflow: scroll;
   padding: spacing("xl");
@@ -35,8 +33,9 @@ $WIDTH: 789px;
 
   .document {
     position: relative;
+    margin: 0 auto;
     height: 1020px;
-    min-width: $WIDTH;
+    width: $WIDTH;
     display: flex;
     border-radius: 16px;
     box-shadow: 0px 0px 9px -2px grey;
@@ -168,5 +167,72 @@ $WIDTH: 789px;
     padding: 0;
     border-radius: 0;
     box-shadow: none;
+  }
+}
+
+@include breakpoint(sm down) {
+  .cv {
+    padding: 0;
+    overflow: hidden;
+    .buttonContainer {
+      opacity: 1;
+      top: initial;
+      bottom: spacing("m");
+      right: spacing("s");
+      .printButton {
+        display: none;
+      }
+      .downloadButton {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+
+    .document {
+      width: 100vw;
+      height: 100vh;
+      font-size: 10px;
+      border-radius: 0;
+      h1 {
+        font-size: 12px;
+      }
+      h3 {
+        font-size: 10px;
+      }
+      .sidebar {
+        width: 40%;
+        overflow: scroll;
+        padding: spacing("m") spacing("s") 70px spacing("s");
+        section {
+          margin-top: spacing("m");
+        }
+        h2 {
+          font-size: 10px;
+          text-align: center;
+        }
+
+      .details,
+      .links,
+      .skills,
+      .languages {
+        a {
+          width: 100px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+      }
+      .content {
+        width: 60%;
+        overflow: scroll;
+        padding: spacing("m") spacing("xs") 70px spacing("m");
+        h2 {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

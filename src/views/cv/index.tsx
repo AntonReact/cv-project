@@ -42,7 +42,7 @@ function CV(props: ICVProps) {
   const renderSkill = ({ label, skill }: ISkill): ReactElement => (
     <div className={styles.item} key={label}>
       <div className={styles.skill__label}>{label}</div>
-      <Progress animate max={5} value={skill} />
+      <Progress max={5} value={skill} />
     </div>
   );
 

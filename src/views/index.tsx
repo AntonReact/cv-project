@@ -8,39 +8,13 @@ import {
 } from 'react-router-dom';
 // utils
 import clsx from 'src/utils/clsx';
+import steps from './steps';
 // components
 import StepContext from './context';
-import Welcome from './welcome';
-import Projects from './projects';
-import Skills from './skills';
-import CV from './cv';
 // types
 import { IStep, IStepContext } from './types';
 // styles
 import styles from './views.module.scss';
-
-const steps: Array<IStep> = [
-  {
-    Component: Welcome,
-    theme: 'white',
-    path: '/welcome',
-  },
-  {
-    Component: Skills,
-    theme: 'black',
-    path: '/skills',
-  },
-  {
-    Component: Projects,
-    theme: 'white',
-    path: '/projects',
-  },
-  {
-    Component: CV,
-    theme: 'black',
-    path: '/cv',
-  },
-];
 
 const STEP_CHANGE_DELAY: number = 1000;
 
@@ -87,6 +61,7 @@ function Views() {
 
   const contextValue: IStepContext = useMemo(() => ({
     theme: currentStep?.theme || 'white',
+    onStepChange: handleStepChange,
     onNextStep: handleNextStep,
     onPrevStep: handpePrevStep,
   }), [handleStepChange, handleNextStep, handpePrevStep]);

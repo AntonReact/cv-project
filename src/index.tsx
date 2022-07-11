@@ -7,7 +7,7 @@ import App from './App';
 // utils
 import reportWebVitals from './reportWebVitals';
 // styles
-import 'src/styles/globals.scss';
+import 'src/styles/index.scss';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

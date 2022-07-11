@@ -6,6 +6,7 @@ import { IStepContext } from './types';
 const defaultValues: IStepContext = {
   onNextStep: () => {},
   onPrevStep: () => {},
+  onStepChange: () => {},
   theme: 'white',
 };
 
