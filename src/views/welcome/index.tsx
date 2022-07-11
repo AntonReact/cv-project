@@ -29,7 +29,11 @@ function Welcome(props: IStepProps) {
   return (
     <div className={clsx(styles.welcome, className)}>
       <h2>
-        Welcome to my portfolio!
+        Meet the Software Engineer
+        {' '}
+        <br />
+        {' '}
+        Anton Leusenko
       </h2>
       <Button className={clsx(styles.startButton, { [styles.pulse]: !clicked })} onClick={handleClick}>
         start
