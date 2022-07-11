@@ -24,7 +24,7 @@
 
 @keyframes _slide-top {
   0% {
-    bottom: 200vh;
+    bottom: 1200px;
   }
 
   100% {
@@ -34,7 +34,7 @@
 
 @keyframes _slide-bottom {
   0% {
-    top: 200vh;
+    top: 1200px;
   }
 
   100% {
@@ -99,7 +99,7 @@
 
 @mixin slide-top($delay: 0, $duration: 1s) {
   position: relative;
-  bottom: 120vh;
+  bottom: 1200px;
   animation: _slide-top $duration forwards;
 
   @if $delay !=0 {
@@ -109,7 +109,7 @@
 
 @mixin slide-bottom($delay: 0, $duration: 1s) {
   position: relative;
-  top: 120vh;
+  top: 1200px;
   animation: _slide-bottom $duration forwards;
 
   @if $delay !=0 {

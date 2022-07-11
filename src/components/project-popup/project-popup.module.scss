@@ -15,6 +15,7 @@
   opacity: 0;
   transition: .3s, height .2s, width .2s;
   pointer-events: none;
+  z-index: 1;
 
   &.open {
     width: 250px;
